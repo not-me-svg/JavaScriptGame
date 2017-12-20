@@ -40,3 +40,14 @@ body {
 .actr__coin {
   background-color: rgb(240, 230, 90);
 }
+
+.actr__player {
+  background: url('character.png');
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  animation: play 0.8s steps(4) infinite;
+}
+
+@keyframes play {
+   100% { background-position: -64px; }
+}

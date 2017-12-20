@@ -11,7 +11,9 @@ function DOMDisplay(parent, level) {
   this.level = level;
 
   this.wrap.appendChild(this.drawBackground());
-  this.wrap.appendChild(this.drawActors());
+  this.actorsLayer = null;
+
+  this.drawFrame();
 }
 
 DOMDisplay.prototype.drawBackground = function() {
@@ -43,4 +45,10 @@ DOMDisplay.prototype.drawActors = function() {
   })
 
   return actorWrap;
+}
+
+DOMDisplay.prototype.drawFrame = function() {
+  if(this.actorsLayer) this.wrap.removeChild(this.actorsLayer);
+  this.actorsLayer = this.wrap.appendChild(this.drawActors());
+  this.wrap.className = 'jsg ' + (this.level.status || '');
 }
