@@ -1,6 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .jsg {
   position: relative;
   max-width: 600px;
   max-height: 450px;
   overflow: hidden;
+}
+
+.jsg__bg {
+  background-color: rgb(37, 137, 175);
+  table-layout: fixed;
+  border-spacing: 0;
+}
+
+.jsg__bg .wall {
+  background-color: white;
+}
+
+.jsg__bg .lava {
+  background-color: red;
+}
+
+.actr {
+  position: absolute;
+}
+
+.actr__coin {
+  background-color: rgb(240, 230, 90);
 }
