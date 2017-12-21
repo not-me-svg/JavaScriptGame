@@ -52,3 +52,7 @@ DOMDisplay.prototype.drawFrame = function() {
   this.actorsLayer = this.wrap.appendChild(this.drawActors());
   this.wrap.className = 'jsg ' + (this.level.status || '');
 }
+
+DOMDisplay.prototype.clear = function() {
+  this.wrap.parentNode.removeChild(this.wrap);
+}

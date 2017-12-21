@@ -1,6 +1,9 @@
 const ACTORS = {
   'o': Coin,
-  '@': Player
+  '@': Player,
+  '=': Lava,
+  'v': Lava,
+  '|': Lava
 };
 
 function Level(plan) {
