@@ -12,8 +12,6 @@ function DOMDisplay(parent, level) {
 
   this.wrap.appendChild(this.drawBackground());
   this.actorsLayer = null;
-
-  this.drawFrame();
 }
 
 DOMDisplay.prototype.drawBackground = function() {
