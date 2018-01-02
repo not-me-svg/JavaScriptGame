@@ -61,18 +61,8 @@ function runGame(levels, Display) {
 
     runLevel(levelObject, Display, status => {
       let mssg = document.getElementsByClassName('jsg__mssg')[0];
-      if (status === 'lost') {
-        mssg.innerHTML = 'Has perdido';
-        setTimeout(function() {
-          startLevel(levelNumber);
-        }, 1000);
-      }
-      else if (levelNumber < levels.length -1) {
-        mssg.innerHTML ='Has ganado :)';
-        setTimeout(function() {
-          startLevel(levelNumber  +1)
-        }, 1000);
-      }
+      if (status === 'lost') startLevel(levelNumber);
+      else if (levelNumber < levels.length -1) startLevel(levelNumber  +1)
     });
   }
   startLevel(0);

@@ -23,7 +23,7 @@ const GAME_LEVELS = [
    "                              xxxxx                  xxxxxxx                    ",
    "                                                                                ",
    "                                                                                "],
-  ["                                      x!!x                        xxxxxxx                                    x!x  ",
+  /*["                                      x!!x                        xxxxxxx                                    x!x  ",
    "                                      x!!x                     xxxx     xxxx                                 x!x  ",
    "                                      x!!xxxxxxxxxx           xx           xx                                x!x  ",
    "                                      xx!!!!!!!!!!xx         xx             xx                               x!x  ",
@@ -82,8 +82,8 @@ const GAME_LEVELS = [
    "                                     xx   xx          x                     x!!!x                             ",
    "                              o   o   x   x           x     x                xxv        xxx                   ",
    "                                      x   x           x              x                 x!!!x                  ",
-   "                             xxx xxx xxx xxx     o o  x!!!!!!!!!!!!!!x                   vx                   ",
-   "                             x xxx x x xxx x          x!!!!!!!!!!!!!!x                                        ",
+   "                            xxx xxx  xxx xxx     o o  x!!!!!!!!!!!!!!x                   vx                   ",
+   "                            xx xx x  x xxx x          x!!!!!!!!!!!!!!x                                        ",
    "                             x             x   xxxxxxxxxxxxxxxxxxxxxxx                                        ",
    "                             xx           xx                                         xxx                      ",
    "  xxx                         x     x     x                                         x!!!x                xxx  ",
@@ -99,5 +99,5 @@ const GAME_LEVELS = [
    "  x      @          x         x           x!!x    x!!!!x    x!!!!x    xx   xx                    x         x  ",
    "  xxxxxxxxxxxxxxxxxxxxxxxxxxxxx           xxxxxxxxxxxxxxxxxxxxxxxxxxxxx     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  ",
    "                                                                                                              ",
-   "                                                                                                              "],
+   "                                                                                                              "],*/
 ];

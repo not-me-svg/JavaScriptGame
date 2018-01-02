@@ -33,11 +33,10 @@ body {
 
 .jsg__mssg {
   position: absolute;
-  z-index: 99;
-  bottom: 0;
+  z-index: 0;
+  bottom: 50%;
   left: 0;
   width: 100%;
-  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
