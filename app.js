@@ -40,6 +40,7 @@ function runAnimation(frameFunction){
 function runLevel(level, Display, callback) {
   let display = new Display(document.body, level);
   runAnimation(function(step) {
+    level.animate(step, arrows);
     display.drawFrame();
     if (level.isFinished()) {
       display.clear();
@@ -49,12 +50,32 @@ function runLevel(level, Display, callback) {
   });
 }
 
-function runGame(level, Display) {
-  let levelObject = new Level(GAME_LEVELS);
-  runLevel(levelObject, Display, status => {
-    if (status === 'lost') console.log('Has perdido');
-    else console.log('Has ganado :)');
-  });
+function runGame(levels, Display) {
+  function startLevel(levelNumber) {
+    let levelObject;
+    try {
+      levelObject = new Level(levels[levelNumber]);
+    } catch (error) {
+      return alert(error.message);
+    }
+
+    runLevel(levelObject, Display, status => {
+      let mssg = document.getElementsByClassName('jsg__mssg')[0];
+      if (status === 'lost') {
+        mssg.innerHTML = 'Has perdido';
+        setTimeout(function() {
+          startLevel(levelNumber);
+        }, 1000);
+      }
+      else if (levelNumber < levels.length -1) {
+        mssg.innerHTML ='Has ganado :)';
+        setTimeout(function() {
+          startLevel(levelNumber  +1)
+        }, 1000);
+      }
+    });
+  }
+  startLevel(0);
 }
 
 runGame(GAME_LEVELS, DOMDisplay);
