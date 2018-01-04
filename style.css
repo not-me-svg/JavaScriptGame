@@ -17,6 +17,7 @@ body {
   max-width: 600px;
   max-height: 450px;
   overflow: hidden;
+  z-index: 10;
 }
 
 .jsg__title {
@@ -25,10 +26,109 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 200px;
+  height: calc(100vh - 600px);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.jsg__title span {
+  font-family: 'VT323', monospace;
+  font-size: 116px;
+  font-weight: bolder;
+}
+
+.title__container {
+  position: relative;
+  width: 600px;
+  height: 100%;
+}
+
+.jsg__title .front {
+  color: yellow;
+  position: absolute;
+  z-index: 1;
+}
+
+.jsg__title .front span {
+  text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+.jsg__title .back {
+  color: magenta;
+  transform: translateX(-3px) translateY(-3px);
+}
+
+.jsg__title .back span {
+  text-shadow: 2px 0 0 magenta, -2px 0 0 magenta, 0 2px 0 magenta, 0 -2px 0 magenta, 1px 1px magenta, -1px -1px 0 magenta, 1px -1px 0 magenta, -1px 1px 0 magenta;
+}
+
+@keyframes hoop {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes orbitType1 {
+  from { transform: rotate(0deg) translateX(3px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(3px) rotate(-360deg); }
+}
+
+@keyframes orbitType2 {
+  from { transform: rotate(0deg) translateX(3px) rotate(0deg); }
+  to   { transform: rotate(-360deg) translateX(3px) rotate(360deg); }
+}
+
+.jsg__title .front .letter:nth-child(1),
+.jsg__title .back .letter:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 90px;
+    animation: hoop 0.9s linear 0s infinite;
+}
+.jsg__title .front .letter:nth-child(2),
+.jsg__title .back .letter:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 220px;
+    animation: hoop 0.9s linear 0.1s infinite;
+}
+.jsg__title .front .letter:nth-child(3),
+.jsg__title .back .letter:nth-child(3) {
+    position: absolute;
+    top: 0;
+    left: 350px;
+    animation: hoop 0.9s linear 0.2s infinite;
+}
+.jsg__title .front .letter:nth-child(4),
+.jsg__title .back .letter:nth-child(4) {
+    position: absolute;
+    top: 0;
+    left: 480px;
+    animation: hoop 0.9s linear 0.3s infinite;
+}
+
+.spritz {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.spritz span {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  display: block;
+  background: magenta;
+}
+
+.spritz span:nth-child(n+1) {
+  animation: orbitType1 .5s linear infinite;
+}
+
+.spritz span:nth-child(2n+1) {
+  animation: orbitType2 .5s linear infinite;
 }
 
 .jsg__mssg {
