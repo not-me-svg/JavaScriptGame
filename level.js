@@ -7,7 +7,14 @@ const ACTORS = {
 };
 
 const MAX_STEP = 0.05;
-const gameAudio = new Audio('sounds/coin.wav');
+const gameAudio = new Audio('sounds/game.wav');
+const coinAudio = new Audio('sounds/coin.wav');
+const winAudio = new Audio('sounds/win.mp3');
+gameAudio.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+gameAudio.play();
 
 function Level(plan) {
   if (!validateLevel(plan)) throw new Error('You need a player and a coin')
@@ -79,6 +86,8 @@ Level.prototype.playerTouched = function(type, actor) {
     this.actors = this.actors.filter(otherActor => otherActor !== actor);
     if(!remainCoins(this.actors)) {
       this.status = 'won';
+      gameAudio.pause();
+      winAudio.play();
       this.finishDelay = 2;
     }
   }
@@ -104,7 +113,7 @@ function remainCoins (actors) {
 }
 
 function playAudio () {
-  gameAudio.pause();
-  gameAudio.currentTime = 0;
-  gameAudio.play();
+  coinAudio.pause();
+  coinAudio.currentTime = 0;
+  coinAudio.play();
 }
