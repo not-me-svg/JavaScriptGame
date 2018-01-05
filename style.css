@@ -142,6 +142,16 @@ body {
   align-items: center;
 }
 
+.jsg__mssg a {
+  font-size: 36px;
+  padding: 16px;
+}
+
+.jsg__mssg a.disabled {
+  filter: grayscale(100%);
+  cursor: not-allowed;
+}
+
 .jsg__bg {
   background-color: rgb(37, 137, 175);
   table-layout: fixed;

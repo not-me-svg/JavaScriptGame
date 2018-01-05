@@ -10,3 +10,10 @@ spritzies.forEach(function(element) {
     element.style.top = getRandomInt(-800, 800) + 'px';
     element.style.left = getRandomInt(-2000, 2000) + 'px';
 });
+
+var presents = Object.values(document.getElementsByClassName('present'));
+presents.forEach(function(element) {
+    element.onclick = function() {
+      element.classList.toggle('disabled');
+    };
+});
